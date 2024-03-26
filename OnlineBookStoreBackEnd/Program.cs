@@ -20,11 +20,22 @@ builder.Services.AddHttpClient();
 builder.Services.AddTransient<IBookService<Post>, BookServiceManager<Post>>();
 builder.Services.AddTransient<BookServiceApiClient>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowOrigin",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.UseAuthorization();
+
+app.UseCors("AllowOrigin");
 
 app.MapControllers();
 

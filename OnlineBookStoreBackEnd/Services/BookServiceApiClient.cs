@@ -19,7 +19,6 @@ namespace OnlineBookStoreSystem.Services
         public async Task<List<Post>> GetPostsByTags(List <string> tags, string sortBy,string direction)
         {
             List<Post> postsData = new List<Post>();
-            HashSet<Post> concatenatedPosts = new HashSet<Post>();
 
             try
             {
@@ -32,11 +31,12 @@ namespace OnlineBookStoreSystem.Services
                         var content = await apiResponse.Content.ReadAsStringAsync();
                         var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                         var result = JsonSerializer.Deserialize<PostApiResponse>(content, options);
-                        postsData = postsData.Union(result?.Posts).ToList();
-                        foreach (var post in postsData)
-                        {
-                            Console.WriteLine(post.Id);
-                        }
+                        postsData = postsData.Union(result?.Posts)
+                                 .GroupBy(p => p.Id)
+                                 .Select(g => g.First())
+                                 .ToList();
+
+
                     }
                     else
                     {
@@ -67,10 +67,10 @@ namespace OnlineBookStoreSystem.Services
                     posts.Sort((post1,post2)=> direction.ToLower() == "asc" ? post1.Reads.CompareTo(post2.Reads):post2.Reads.CompareTo(post1.Reads)); 
                     break;
                 case "likes":
-                    posts.Sort((post1, post2) => direction.ToLower() == "asc" ? post1.Likes.CompareTo(post2.Likes) : post2.Likes.CompareTo(post1.Reads));
+                    posts.Sort((post1, post2) => direction.ToLower() == "asc" ? post1.Likes.CompareTo(post2.Likes) : post2.Likes.CompareTo(post1.Likes));
                     break;
                 case "popularity":
-                    posts.Sort((post1, post2) => direction.ToLower() == "asc" ? post1.Popularity.CompareTo(post2.Popularity) : post2.Likes.CompareTo(post1.Popularity));
+                    posts.Sort((post1, post2) => direction.ToLower() == "asc" ? post1.Popularity.CompareTo(post2.Popularity) : post2.Popularity.CompareTo(post1.Popularity));
                     break;
                 default:
                     posts.Sort((post1, post2) => direction.ToLower() == "asc" ? post1.Id.CompareTo(post2.Id) : post2.Id.CompareTo(post1.Id));
