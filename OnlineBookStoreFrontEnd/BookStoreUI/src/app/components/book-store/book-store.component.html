@@ -1,0 +1,33 @@
+
+<div class="container">
+<h1>Welcome to Toronto Book Store</h1>
+<div class="container">
+  <form [formGroup]="postsForm" (ngSubmit)="getPostsForTags()" class="form">
+    <div>
+      <label for="tags">Tags:</label>
+      <input formControlName="tags"
+       type="text" 
+       id="tags" 
+       placeholder="Enter tags separated by commas" 
+      class="form-control tags-input">
+    </div>
+    <div>
+      <label for="sortBy">Sort By:</label>
+      <select id="sortBy" formControlName="sortBy">
+        <option value="id">Id</option>
+        <option value="reads">Reads</option>
+        <option value="reads">Likes</option>
+        <option value="reads">Popularity</option>
+      </select>
+    </div>
+    <div>
+      <label for="direction">Direction:</label>
+      <select id="direction" formControlName="direction">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" >Get Posts</button>
+  </form>
+</div>
+</div>

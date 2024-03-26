@@ -1,0 +1,34 @@
+form div {
+    margin-bottom: 10px; 
+  }
+  
+  
+  .container {
+    width: 80%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding to the container */
+    background-color: #f0f8ff; /* Light blue background color */
+    border-radius: 10px; /* Add rounded corners to the container */
+  }
+  
+  
+  .form {
+    background-color: #f0f8ff; /* Light blue background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  }
+  
+  .form div {
+    margin-bottom: 20px; /* Add space between each form control */
+  }
+  
+  label {
+    display: block; /* Ensure labels are displayed on a new line */
+  }
+  
+  /* styles.css or component-specific CSS */
+.tags-input {
+    width: 300px; /* Adjust the width as needed */
+  }
+  
