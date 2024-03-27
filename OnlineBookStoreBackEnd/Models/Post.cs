@@ -3,7 +3,7 @@
 namespace OnlineBookStoreSystem.Models
 {
     /// <summary>
-    /// Model class which contains the properties for each post
+    /// Model class which contains the properties for post object
     /// </summary>
     public class Post
     {
@@ -15,5 +15,13 @@ namespace OnlineBookStoreSystem.Models
         public decimal Popularity { get; set; }
         public int Reads { get; set; }
         public List<string> Tags { get; set; }
+    }
+
+    /// <summary>
+    /// API response from the HTTP request
+    /// </summary>
+    public class PostApiResponse
+    {
+        public List<Post> Posts { get; set; }
     }
 }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Cors;
 using OnlineBookStoreSystem.Models;
 using OnlineBookStoreSystem.Services;
 using OnlineBookStoreSystem.Settings;
@@ -13,13 +14,15 @@ var configuration = new ConfigurationBuilder()
 // Configure services
 builder.Configuration.Bind("ApiSettings", new ApiSettings());
 builder.Services.AddControllers();
+
 // Add HttpClient
 builder.Services.AddHttpClient();
 
-// Add services to the container.
+// Register services to the container.
 builder.Services.AddTransient<IBookService<Post>, BookServiceManager<Post>>();
 builder.Services.AddTransient<BookServiceApiClient>();
 
+// Enable cross origin calls
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowOrigin",
@@ -27,7 +30,6 @@ builder.Services.AddCors(options =>
                           .AllowAnyMethod()
                           .AllowAnyHeader());
 });
-
 
 var app = builder.Build();
 
