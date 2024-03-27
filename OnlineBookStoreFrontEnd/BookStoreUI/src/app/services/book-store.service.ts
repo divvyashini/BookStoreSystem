@@ -14,7 +14,14 @@ export class BookStoreService {
 
    }
 
-   getPostsByTags(tags: string[], sortBy: string, direction: string): Observable<Post[]> {
+  /**
+ * Retrieves posts from the API based on specified tags, sorting  field and direction.
+ * @param tags An array of tags to filter the posts.
+ * @param sortBy The field for sorting.
+ * @param direction The direction of sorting (ascending or descending).
+ * @returns An Observable returning an array of Post objects retrieved from the API.
+ */
+   getPostsByTags(tags: string[], sortBy: string, direction: string): Observable<any> {
     const params = {
       tags: tags,
       sortBy,
@@ -23,3 +30,6 @@ export class BookStoreService {
     return this.http.get<Post[]>(`${this.baseUrl}/Books/posts`, { params });
   }
 }
+
+
+

@@ -1,3 +1,5 @@
+
+//Model class for Post object
 export class Post {
     id: number;
     author: string;

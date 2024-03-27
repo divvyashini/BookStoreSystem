@@ -31,4 +31,7 @@ form div {
 .tags-input {
     width: 300px; /* Adjust the width as needed */
   }
+  .error {
+    color: red;
+  }
   
