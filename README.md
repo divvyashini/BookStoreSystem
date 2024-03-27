@@ -1,6 +1,6 @@
 # OnlineBookStoreSystem
 
-This application is designed to retrieve posts from a third party API based on input parameters which are a list of tags, a sorting field and direction of sorting.
+This application is designed to retrieve book related posts from a third party API based on input parameters which are a list of tags, a sorting field and direction of sorting.
 
 ## Table of Contents
 - [Features](#features)
@@ -8,7 +8,7 @@ This application is designed to retrieve posts from a third party API based on i
 
 ## Features
 
-- Retrieve posts based on specified list of tags, sorting field and sorting direction
+- Retrieve book posts based on specified list of tags, sorting field and sorting direction
 
 
 ## Installation
