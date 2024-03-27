@@ -4,32 +4,32 @@ form div {
   
   
   .container {
-    width: 80%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 20px; /* Add padding to the container */
-    background-color: #f0f8ff; /* Light blue background color */
-    border-radius: 10px; /* Add rounded corners to the container */
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 20px; 
+    background-color: #f0f8ff; 
+    border-radius: 10px; 
   }
   
   
   .form {
-    background-color: #f0f8ff; /* Light blue background color */
+    background-color: #f0f8ff; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   }
   
   .form div {
-    margin-bottom: 20px; /* Add space between each form control */
+    margin-bottom: 20px; 
   }
   
   label {
-    display: block; /* Ensure labels are displayed on a new line */
+    display: block; 
   }
   
-  /* styles.css or component-specific CSS */
+
 .tags-input {
-    width: 300px; /* Adjust the width as needed */
+    width: 300px; 
   }
   .error {
     color: red;
